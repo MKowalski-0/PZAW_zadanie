@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista quizów</title>
+</head>
+<body>
+    <h1>Lista Quizów</h1>
+<ul>
+    {% for quiz in quizes %}
+        <li>{{ quiz.title }} - {{ quiz.description }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'quiz-add' %}">Dodaj nowy quiz</a>
+
+</body>
+</html>

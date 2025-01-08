@@ -1,8 +1,9 @@
 from django.urls import path
-
 from . import views
+from .views import dodaj_quiz, lista_quizow, strona_glowna
 
-app_name = "quizes"
 urlpatterns = [
-    path('', views.index, name="index"),
+    path('', strona_glowna, name='strona-glowna'),
+    path('dodaj-quiz/', dodaj_quiz, name='quiz-add'),
+    path('lista-quizow/', lista_quizow, name='quiz-list'),
 ]
