@@ -8,7 +8,8 @@ class QuizForm(ModelForm):
         fields = ['title', 'description']
 
 def strona_glowna(request):
-    return render(request, 'quizes/main.html')
+    ostatnie_quizy = Quiz.objects.all().order_by('-created_at')[:10]
+    return render(request, 'quizes/main.html', {'ostatnie_quizy': ostatnie_quizy})
 
 def dodaj_quiz(request):
     if request.method == "POST":

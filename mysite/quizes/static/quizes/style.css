@@ -1,0 +1,122 @@
+/* Ustawienia dla całej strony */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Wyśrodkowanie pionowe */
+    align-items: center;    /* Wyśrodkowanie poziome */
+    min-height: 100vh;      /* Całkowita wysokość widoku */
+    margin: 0;              /* Usuń domyślne marginesy */
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Jasne, pastelowe tło UwU */
+    color: #333;
+}
+
+/* Nagłówek główny */
+h1 {
+    font-size: 2.5rem;
+    color: #ff69b4; /* Pastelowy róż, bo kawaii ✨ */
+    margin-bottom: 20px;
+}
+
+/* Nawigacja */
+nav {
+    margin-bottom: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #007bff; /* Niebieskie linki */
+    margin-right: 15px;
+}
+
+nav a:hover {
+    color: #0056b3; /* Ciemniejszy niebieski po najechaniu */
+}
+
+/* Oddzielająca linia */
+hr {
+    width: 80%;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Lista ostatnich quizów */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 80%; /* Dopasuj szerokość listy */
+}
+
+ul li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px; /* Zaokrąglone rogi */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Delikatny cień */
+}
+
+ul li strong {
+    font-size: 1.2rem;
+    color: #ff69b4;
+}
+
+ul li p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Pusty stan listy */
+ul p {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}
+
+/* Formularz */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Odstęp między polami */
+    width: 100%;
+    max-width: 400px; /* Maksymalna szerokość formularza */
+    padding: 20px;
+    background: #fff; /* Białe tło formularza */
+    border-radius: 10px; /* Zaokrąglone rogi */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Delikatny cień */
+}
+
+form button {
+    background-color: #ff69b4; /* Pastelowy róż */
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #ff85c1; /* Jaśniejszy róż po najechaniu ✨ */
+}
+
+/* Ogólne style dla input i textarea */
+input[type="text"], textarea {
+    width: 100%; /* Dopasowanie szerokości do formularza */
+    max-width: 400px; /* Maksymalna szerokość */
+    min-width: 300px; /* Minimalna szerokość */
+    padding: 10px; /* Wewnętrzne odstępy */
+    margin: 10px 0; /* Odstęp nad i pod polem */
+    border: 1px solid #ccc; /* Obramowanie */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    resize: none; /* Wyłączenie zmiany rozmiaru */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Delikatny cień */
+}
+
+/* Styl dla textarea */
+textarea {
+    height: 100px; /* Wysokość dla paragrafu */
+    line-height: 1.5; /* Odstępy między liniami tekstu */
+}

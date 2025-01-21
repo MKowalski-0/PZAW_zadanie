@@ -1,18 +1,33 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista quizów</title>
+    <link rel="stylesheet" href="{% static 'quizes/style.css' %}">
 </head>
 <body>
     <h1>Lista Quizów</h1>
-<ul>
-    {% for quiz in quizes %}
-        <li>{{ quiz.title }} - {{ quiz.description }}</li>
-    {% endfor %}
-</ul>
-<a href="{% url 'quiz-add' %}">Dodaj nowy quiz</a>
+    
+    <ul>
+        {% for quiz in quizes %}
+            <li>
+                <strong>{{ quiz.title }}</strong><br>
+                {{ quiz.description|default:"Brak opisu" }}<br>
+                Dodano: {{ quiz.created_at|date:"d M Y H:i" }}
+            </li>
+        {% empty %}
+            <p>Brak quizów do wyświetlenia.</p>
+        {% endfor %}
+    </ul>
 
+    <hr>
+
+
+    <nav>
+        <a href="{% url 'quiz-add' %}">Dodaj nowy quiz</a>
+        <a href="{% url 'main' %}">Powrót na stronę główną</a>
+    </nav>
 </body>
 </html>

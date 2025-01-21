@@ -1,0 +1,40 @@
+# Pliki i foldery systemowe
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Pliki środowiska wirtualnego
+venv/
+.env
+*.env
+
+# Pliki i katalogi IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*.log
+
+# Migracje Django
+*.pyc
+migrations/
+
+# Statyczne pliki generowane automatycznie
+staticfiles/
+media/
+
+# Pliki tymczasowe i robocze
+*.bak
+*.tmp
+*.~*
+*.DS_Store
+
+# Pliki testowe
+coverage.xml
+*.coverage
+htmlcov/
+.tox/
+
+# Pliki narzędzi
+*.lock
+node_modules/
