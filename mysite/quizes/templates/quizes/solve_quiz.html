@@ -1,0 +1,30 @@
+<!-- quizes/templates/quizes/solve_quiz.html -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rozwiązywanie quizu</title>
+</head>
+<body>
+    <h2>{{ quiz.title }}</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {% for question in questions %}
+            <p>{{ question.text }}</p>
+            <input type="radio" name="{{ question.id }}" value="A">{{ question.option_a }}<br>
+            <input type="radio" name="{{ question.id }}" value="B">{{ question.option_b }}<br>
+            <input type="radio" name="{{ question.id }}" value="C">{{ question.option_c }}<br>
+            <input type="radio" name="{{ question.id }}" value="D">{{ question.option_d }}<br>
+        {% endfor %}
+        <button type="submit">Zakończ quiz</button>
+    </form>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Powrót do strony głównej</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

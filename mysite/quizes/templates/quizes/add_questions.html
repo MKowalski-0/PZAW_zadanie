@@ -1,0 +1,6 @@
+<h2>Adding Questions to {{ quiz.title }}</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="number" name="num_questions" value="{{ num_questions }}" />
+    <button type="submit">Add Questions</button>
+</form>

@@ -1,0 +1,24 @@
+<!-- quizes/templates/quizes/create_quiz.html -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tworzenie quizu</title>
+</head>
+<body>
+    <h2>Tworzenie nowego quizu</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Utwórz quiz</button>
+    </form>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Powrót do strony głównej</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

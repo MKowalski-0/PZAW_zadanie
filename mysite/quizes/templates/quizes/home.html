@@ -1,0 +1,34 @@
+<!-- quizes/templates/quizes/home.html -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona Główna</title>
+</head>
+<body>
+    <h1>Witaj na stronie głównej!</h1>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Strona główna</a></li>
+            <li><a href="{% url 'register' %}">Rejestracja</a></li>
+            <li><a href="{% url 'create_quiz' %}">Stwórz quiz</a></li>
+        </ul>
+    </nav>
+
+    <h2>Nowe quizy:</h2>
+    <ul>
+        {% for quiz in newest_quizzes %}
+            <li><a href="{% url 'solve_quiz' quiz.id %}">{{ quiz.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Popularne quizy:</h2>
+    <ul>
+        {% for quiz in popular_quizzes %}
+            <li><a href="{% url 'solve_quiz' quiz.id %}">{{ quiz.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
