@@ -9,4 +9,5 @@ class QuizForm(forms.ModelForm):
 class QuestionForm(forms.ModelForm):
     class Meta:
         model = Question
-        fields = ['text', 'question_type', 'correct_answer']
+        fields = ['question_text', 'answer_1', 'answer_2', 'answer_3', 'correct_answer']
+

@@ -1,11 +1,13 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <h2>Tworzenie nowego quizu</h2>
+    <h2>Logowanie</h2>
 
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Utwórz quiz</button>
+        <button type="submit">Zaloguj się</button>
     </form>
+
+    <a href="{% url 'home' %}">Powrót do strony głównej</a>
 {% endblock %}

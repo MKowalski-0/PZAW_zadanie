@@ -55,8 +55,10 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [
+            BASE_DIR / 'mysite' / 'quizes' / 'templates',  # Dodajemy katalog templates w aplikacji 'quizes'
+        ],
+        'APP_DIRS': True,  # Włącz automatyczne wyszukiwanie szablonów w aplikacjach
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -67,6 +69,10 @@ TEMPLATES = [
         },
     },
 ]
+
+
+
+
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
@@ -118,7 +124,14 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# 🔐 Ustawienia logowania
+LOGIN_URL = '/quizes/login/'  # Ścieżka do strony logowania
+LOGIN_REDIRECT_URL = '/'  # Po zalogowaniu przekierowanie na stronę główną
+LOGOUT_REDIRECT_URL = '/'  # Po wylogowaniu przekierowanie na stronę główną

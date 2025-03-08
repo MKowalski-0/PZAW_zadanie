@@ -1,2 +1,8 @@
-<h2>Your Result: {{ result.score }}</h2>
-<p>You scored {{ result.score }} out of {{ result.quiz.questions.count }}</p>
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h2>Wynik quizu</h2>
+    <p>Twój wynik: {{ result.score }}</p>
+
+    <a href="{% url 'home' %}">Powrót do strony głównej</a>
+{% endblock %}

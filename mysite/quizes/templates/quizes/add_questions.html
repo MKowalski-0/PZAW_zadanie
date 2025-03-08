@@ -1,6 +1,47 @@
-<h2>Adding Questions to {{ quiz.title }}</h2>
-<form method="post">
-    {% csrf_token %}
-    <input type="number" name="num_questions" value="{{ num_questions }}" />
-    <button type="submit">Add Questions</button>
-</form>
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h2>Dodawanie pytań do {{ quiz.title }}</h2>
+
+    <form method="post" id="questions-form">
+        {% csrf_token %}
+        <div id="questions-container">
+            {% for form in form %}
+                <div class="question-form">
+                    {{ form.as_p }}
+                </div>
+            {% endfor %}
+        </div>
+        <button type="button" id="add-question-btn">Dodaj pytanie</button>
+        <button type="submit">Zapisz pytania</button>
+    </form>
+
+    <script type="text/javascript">
+        let questionCount = {{ num_questions }};
+        
+        document.getElementById('add-question-btn').addEventListener('click', function() {
+            questionCount++;
+            const container = document.getElementById('questions-container');
+            const newQuestion = document.createElement('div');
+            newQuestion.classList.add('question-form');
+            newQuestion.innerHTML = `
+                <label for="id_question_${questionCount}-question_text">Pytanie:</label>
+                <input type="text" name="question_${questionCount}-question_text" required>
+                <label for="id_question_${questionCount}-answer_1">Odpowiedź 1:</label>
+                <input type="text" name="question_${questionCount}-answer_1" required>
+                <label for="id_question_${questionCount}-answer_2">Odpowiedź 2:</label>
+                <input type="text" name="question_${questionCount}-answer_2" required>
+                <label for="id_question_${questionCount}-answer_3">Odpowiedź 3:</label>
+                <input type="text" name="question_${questionCount}-answer_3" required>
+                <label for="id_question_${questionCount}-correct_answer">Odpowiedź poprawna:</label>
+                <select name="question_${questionCount}-correct_answer" required>
+                    <option value="1">Odpowiedź 1</option>
+                    <option value="2">Odpowiedź 2</option>
+                    <option value="3">Odpowiedź 3</option>
+                </select>
+            `;
+            container.appendChild(newQuestion);
+        });
+    </script>
+
+{% endblock %}
