@@ -1,4 +1,4 @@
 Projekt zaliczeniowy na zajęcia PZAW
 ====================================
 
-To jest plik readme
+Są pewne rzeczy jakie chciałbym poprawić, ale to może w kolejnym projekcie.
