@@ -131,7 +131,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# 🔐 Ustawienia logowania
+# Login settings
 LOGIN_URL = '/quizes/login/'  # Ścieżka do strony logowania
 LOGIN_REDIRECT_URL = '/'  # Po zalogowaniu przekierowanie na stronę główną
 LOGOUT_REDIRECT_URL = '/'  # Po wylogowaniu przekierowanie na stronę główną
