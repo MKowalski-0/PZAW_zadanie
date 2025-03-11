@@ -13,7 +13,7 @@ class Quiz(models.Model):
         return self.title
 
     class Meta:
-        ordering = ['-created_at']  # najnowsze quizy na górze
+        ordering = ['-created_at']  
 
 
 class QuestionType(models.Model):
@@ -25,7 +25,7 @@ class QuestionType(models.Model):
 class Question(models.Model):
     quiz = models.ForeignKey(Quiz, related_name='questions', on_delete=models.CASCADE)
     question_text = models.CharField(max_length=255, default='Domyślny tekst')
-    answer_1 = models.CharField(max_length=255, default='Domyślna odpowiedź 1')  # Dodaj tutaj wartość domyślną
+    answer_1 = models.CharField(max_length=255, default='Domyślna odpowiedź 1') 
     answer_2 = models.CharField(max_length=255, default='Domyślna odpowiedź 2')
     answer_3 = models.CharField(max_length=255, default='Domyślna odpowiedź 3')
     correct_answer = models.IntegerField()  # 1, 2 lub 3

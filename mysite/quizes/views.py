@@ -102,7 +102,7 @@ def add_questions(request, quiz_id):
     
     # Jeśli nie ma POST, ustawiamy domyślną liczbę pytań
     else:
-        num_questions = 1  # Domyślnie jedna odpowiedź
+        num_questions = 1  
     
     return render(request, 'quizes/add_questions.html', {
         'quiz': quiz,
@@ -113,7 +113,7 @@ def add_questions(request, quiz_id):
 @login_required
 def solve_quiz(request, quiz_id):
     quiz = get_object_or_404(Quiz, id=quiz_id)
-    questions = quiz.questions.all()  # Pobieramy pytania związane z quizem
+    questions = quiz.questions.all() 
 
     if request.method == 'POST':
         score = 0
